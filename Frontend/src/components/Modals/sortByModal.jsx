@@ -25,7 +25,7 @@ const sortByModal = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <button className="px-4 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Title
+                Titles
               </button>
               <button className="px-1 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
                 Category

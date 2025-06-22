@@ -106,7 +106,7 @@ const getExpense = asyncHandler(async (req, res) => {
 const getAllExpenses = asyncHandler(async (req, res) => {
   try {
     const expenses = await Expense.find({ 
-      user: req.userId // Only find expenses belonging to current user
+      user: req.userId
     })
     .sort("-createdAt");
 

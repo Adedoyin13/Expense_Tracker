@@ -9,69 +9,71 @@ const EditModal = ({ onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={handleBackdropClick}
-        >
-          <div 
-            className="bg-blue-300 rounded-lg shadow-lg p-10 w-70 relative"
-            onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it
-          >
-            <div className="space-y-4">
-              {/* Title Input */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Title
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-2 border-b-2 border-indigo-400 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Enter title"
-                />
-              </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+      <div
+        className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-6 md:p-8 w-[90%] max-w-md transition-all"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+          Edit Title
+        </h2>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Method
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-2  border-b-2 border-indigo-400 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Enter method"
-                />
-              </div>
+        <div className="space-y-4">
+          {/* Title */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Title
+            </label>
+            <input
+              type="text"
+              placeholder="Enter title"
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Amount
-                </label>
-                <div className="relative">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
-                    $
-                  </span>
-                  <input
-                    type="number"
-                    className="w-full pl-10 px-2 border border-indigo-400 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                    placeholder="Enter amount"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* Method */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Method
+            </label>
+            <input
+              type="text"
+              placeholder="Enter method"
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
 
-            <div className="flex justify-end gap-4 mt-5 mr-2">
-              <button className="px-4 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Edit
-              </button>
-              <button
-                onClick={onClose}
-                className="px-4 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800"
-              >
-                Close
-              </button>
+          {/* Amount */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Amount
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">
+                $
+              </span>
+              <input
+                type="number"
+                placeholder="Enter amount"
+                className="w-full pl-8 pr-3 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
             </div>
           </div>
         </div>
+
+        {/* Buttons */}
+        <div className="flex justify-end gap-3 mt-6">
+          <button className="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition">
+            Edit
+          </button>
+          <button
+            onClick={onClose}
+            className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

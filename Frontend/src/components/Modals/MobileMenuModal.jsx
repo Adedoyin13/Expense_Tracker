@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const mobileMenuModal = () => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -11,25 +10,34 @@ const mobileMenuModal = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           {/* Modal Content */}
-          <div className="w-72 bg-blue-900 text-white rounded-lg shadow-lg p-6 relative">
+          <div className="relative w-72 bg-blue-950 text-white rounded-2xl shadow-2xl p-6 transition-all duration-300">
             {/* Close Button */}
             <button
-              className="absolute top-4 right-4 text-white text-lg"
               onClick={closeModal}
+              aria-label="Close"
+              className="absolute top-4 right-4 text-white text-xl hover:text-red-400 transition"
             >
-            
+              &times;
             </button>
+
             {/* Menu Items */}
-            <ul className="space-y-4 text-lg">
-              <li className="hover:underline cursor-pointer">Expenses</li>
-              <li className="hover:underline cursor-pointer">History</li>
-              <li className="hover:underline cursor-pointer">Profile Setting</li>
+            <ul className="space-y-4 text-lg font-medium">
+              <li className="cursor-pointer hover:text-indigo-300 transition">
+                Expenses
+              </li>
+              <li className="cursor-pointer hover:text-indigo-300 transition">
+                History
+              </li>
+              <li className="cursor-pointer hover:text-indigo-300 transition">
+                Profile Setting
+              </li>
             </ul>
+
             {/* Dropdown Icon */}
             <div className="mt-6 text-center">
-              <span className="text-xl">⌄</span>
+              <span className="text-2xl text-slate-300">⌄</span>
             </div>
           </div>
         </div>

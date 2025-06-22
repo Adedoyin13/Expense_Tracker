@@ -21,7 +21,7 @@ const AboutUs = () => {
       <div className="flex flex-col md:flex-row items-center md:items-start justify-center pt-4 md:pt-12 lg:pt-48">
         {/* Text Content */}
         <div className="text-white w-full md:w-9/12 px-4 sm:px-6 md:px-2 lg:px-24 text-center md:text-left">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-headerFont">
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-headerFont leading-relaxed">
             We work together, to work for you
           </h1>
           <p className="text-base md:text-xl font-medium mt-4 font-bodyFont">

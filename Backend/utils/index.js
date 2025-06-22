@@ -5,4 +5,4 @@ const generateToken = (id) => {
     return token
 }
 
-module.exports = generateToken
+module.exports = generateToken;

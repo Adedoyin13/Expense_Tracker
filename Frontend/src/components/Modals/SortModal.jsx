@@ -1,44 +1,43 @@
 import React from "react";
 
-const SortModal = ({onClose}) => {
+const SortModal = ({ onClose }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-blue-300 rounded-lg shadow-lg py-12 px-16 relative">
-            {/* Close Button */}
-            <button
-              onClick={onClose}
-              className="absolute top-6 left-8 text-gray-500 hover:text-gray-700 text-3xl font-bold"
-            >
-              &times;
-            </button>
-            <br />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+      <div className="relative bg-white dark:bg-indigo-900 rounded-2xl shadow-2xl px-8 py-12 w-full max-w-md border border-slate-200 dark:border-slate-700 transition-all">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-4 left-4 text-slate-500 dark:text-slate-400 hover:text-red-500 text-3xl font-bold transition"
+        >
+          &times;
+        </button>
 
-            <div className="grid grid-cols-2 gap-4">
-              <button className="px-8 py-3 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Title
-              </button>
-              <button className=" bg-indigo-900 text-white rounded hover:bg-indigo-800">
-               Category
-              </button>
-              <button className="px-1 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Method
-              </button>
-              <button className="px-8 py-3 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Date
-              </button>
-              <button className="px-8 py-3 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Amount
-              </button>
-              <button className="px-1 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Income
-              </button>
-              <button className="px-1 py-2 bg-indigo-900 text-white rounded hover:bg-indigo-800">
-                Expenses
-              </button>
-            </div>
-          </div>
+        {/* Grid Buttons */}
+        <div className="grid grid-cols-2 gap-4 mt-6">
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+            Title
+          </button>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+            Category
+          </button>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+            Method
+          </button>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+            Date
+          </button>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+            Amount
+          </button>
+          <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium">
+            Income
+          </button>
+          <button className="col-span-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-medium">
+            Expenses
+          </button>
         </div>
+      </div>
     </div>
   );
 };

@@ -25,10 +25,7 @@ const Blog = () => {
       {/* Category Buttons */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6">
         {["Announcements", "Financial Insights", "Company Culture", "Tech & Innovation", "Product Updates", "Exclusive Offers"].map((category) => (
-          <button
-            key={category}
-            className="bg-indigo-900 px-2 md:px-3 lg:px-4 py-1 md:py-2 text-xs md:text-base lg:text-lg font-bodyFont rounded-xl text-white"
-          >
+          <button key={category} className="bg-indigo-900 px-2 md:px-3 lg:px-4 py-1 md:py-2 text-xs md:text-base lg:text-lg font-bodyFont rounded-xl text-white">
             {category}
           </button>
         ))}

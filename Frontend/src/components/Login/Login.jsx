@@ -40,7 +40,7 @@ const Login = () => {
 
       // console.log({formData});
       
-      const response = await axios.post("http://localhost:3000/user/login", formData, {withCredentials: true});
+      const response = await axios.post(`${BASE_URL}/user/login`, formData, {withCredentials: true});
       // localStorage.setItem("authToken", data.token);
       console.log(response);
       toast.success('Login Successful');

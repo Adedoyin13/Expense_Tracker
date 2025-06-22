@@ -8,17 +8,11 @@ const userRoute = require("./route/userRoute");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const errorHandler = require("./middleware/errorMiddleware");
-const { limiter } = require("./controller/userController");
 const PORT = 3000
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-})
 
 app.use(cors({
   origin: [process.env.FRONTEND_URL], 
@@ -28,7 +22,6 @@ app.use(cors({
 }))
 
 
-app.use(limiter);
 app.use("/expense", expenseRoute); 
 app.use("/user", userRoute); 
 

@@ -5,105 +5,66 @@ import { GoPencil } from "react-icons/go";
 
 const ProfileSettings = () => {
   return (
-    <div className="lg:flex  bg-indigo-500 p-1 font-bodyFont">
+    <div className="lg:flex bg-indigo-600 min-h-screen p-4 font-bodyFont">
       {/* Sidebar */}
       <SideBar />
 
       {/* Main Content */}
-      <div className="bg-slate-100 justify-center rounded p-6 w-full">
-        <div className="bg-slate-300 rounded border w-3/4 md: h-screen m-auto p-6">
-          <div className="p-6 flex-col justify-center items-center ">
-            <div className="text-center space-y-3 mb-6 ">
-              <h1 className="text-2xl md:text-3xl font-bold font-headerFont">
-                Account Settings
-              </h1>
-              <p className="text-lg md:text-xl font-medium">
-                Kindly check below to edit Personal Information
-              </p>
-            </div>
-
-            {/* Profile Picture */}
-            <div className="w-full flex justify-center items-center ">
-              <div className="relative mb-4">
-                <img
-                  src={image}
-                  alt="Profile"
-                  className="w-28 h-28 rounded-full border-4 hover:cursor-pointer border-indigo-300 mb-4"
-                />
-                <Link to="/edit-picture">
-                  <GoPencil className="w-10 h-10 absolute bottom-0 right-0  text-indigo-900 rounded-full p-1" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Form */}
-            <form className="  ">
-              <div className="space-y-6 w-full flex-col  ">
-                <div className="flex gap-2 justify-center items-center">
-                    <label htmlFor="email" className="font-medium">
-                   First Name:
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="John"
-                      className="bg-indigo-100 p-2 w-2/3 rounded-md border-b border-indigo-900"
-                      required
-                    />
-                  <GoPencil className=" text-indigo-500 cursor-pointer" />
-                </div>
-                <div className="flex gap-2 justify-center items-center">
-                    <label htmlFor="email" className="font-medium">
-                   Last Name:
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="Doe"
-                      className="bg-indigo-100 p-2 w-2/3 rounded-md border-b border-indigo-900"
-                      required
-                    />
-                  <GoPencil className=" text-indigo-500 cursor-pointer" />
-                </div>
-                <div className="flex gap-2 justify-center items-center">
-                    <label htmlFor="email" className="font-medium">
-                   Email:
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="johndoe@ex.com"
-                      className="bg-indigo-100 p-2 w-2/3 rounded-md border-b border-indigo-900"
-                      required
-                    />
-                  <GoPencil className=" text-indigo-500 cursor-pointer" />
-                </div>
-                <div className="flex gap-2 justify-center items-center">
-                    <label htmlFor="email" className="font-medium">
-                   Password:
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      placeholder="........"
-                      className="bg-indigo-100 p-2 w-2/3 rounded-md border-b border-indigo-900"
-                      required
-                    />
-                  <GoPencil className=" text-indigo-500 cursor-pointer" />
-                </div>
-                <br />
-              </div>
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-indigo-700 text-white w-1/3 p-3 rounded hover:bg-indigo-900"
-                >
-                  Save
-                </button>
-              </div>
-            </form>
-          </div>
+      <div className="flex-1 bg-white rounded-lg shadow-xl p-6 max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="mb-6 border-b pb-4">
+          <h1 className="text-2xl font-bold text-indigo-800">
+            Account Settings
+          </h1>
+          <p className="text-gray-600 text-sm mt-1">
+            Update your personal information below
+          </p>
         </div>
+
+        {/* Profile Picture */}
+        <div className="flex justify-center mb-6 relative">
+          <img
+            src={image}
+            alt="Profile"
+            className="w-24 h-24 rounded-full border-4 border-indigo-300 object-cover"
+          />
+          <Link to="/edit-picture">
+            <GoPencil className="absolute bottom-0 right-[42%] bg-white text-indigo-600 rounded-full p-1 w-8 h-8 hover:text-indigo-800" />
+          </Link>
+        </div>
+
+        {/* Form */}
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { label: "First Name", placeholder: "John" },
+            { label: "Last Name", placeholder: "Doe" },
+            { label: "Password", placeholder: "********", type: "password" },
+          ].map(({ label, placeholder, type = "text" }, index) => (
+            <div key={index} className="flex flex-col gap-1">
+              <label className="text-sm font-medium text-gray-700">
+                {label}
+              </label>
+              <div className="flex items-center gap-2">
+                <input
+                  type={type}
+                  placeholder={placeholder}
+                  className="flex-1 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  required
+                />
+                <GoPencil className="text-indigo-500 hover:text-indigo-800 cursor-pointer" />
+              </div>
+            </div>
+          ))}
+
+          <div className="md:col-span-2 text-right pt-4">
+            <button
+              type="submit"
+              className="bg-indigo-700 text-white px-6 py-2 rounded-md hover:bg-indigo-900 transition"
+            >
+              Save Changes
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

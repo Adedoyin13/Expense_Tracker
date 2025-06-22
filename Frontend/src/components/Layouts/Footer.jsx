@@ -5,6 +5,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   const getCurrentYear = () => {
     return new Date().getFullYear();

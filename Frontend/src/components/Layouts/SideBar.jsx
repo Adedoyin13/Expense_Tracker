@@ -16,8 +16,6 @@ const dashboardLinks = [
   {title: "Log Out", route: "/login"},
 ]
 
-
-
 const SideBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate(); 
